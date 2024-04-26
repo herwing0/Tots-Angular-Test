@@ -55,3 +55,12 @@ Los detalles mas tecnicos de como lidie con las logicas de los componentes los c
 2 ) Estuve un buen rato intentando arreglar y downgradear, problemas causados por utilizar un CLI version mas alta al principio del proyecto, y tambien instale una version erronea de angular material que me trajo un par de dolores de cabeza.
 
 
+## To Run My Project :
+
+- git clone https://github.com/herwing0/Tots-Angular-Test.git 
+- npm install
+- npm run start
+
+
+
+Gracias por todo, fue un ejercicio muy divertido !
