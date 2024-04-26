@@ -1,5 +1,6 @@
 import { Component, Input, ViewChild, type OnInit } from '@angular/core';
 import { FormGroup, Validators } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
 import { TotsListResponse } from '@tots/core';
 import { StringFieldComponent, SubmitButtonFieldComponent, TotsFormModalService, TotsModalConfig } from '@tots/form';
 import { MoreMenuColumnComponent, StringColumnComponent, TotsActionTable,TotsColumn,TotsTableComponent, TotsTableConfig } from '@tots/table';
@@ -7,6 +8,7 @@ import { Observable, delay, map, of, tap } from 'rxjs';
 import { Client } from 'src/app/entities/client';
 import { NewClient } from 'src/app/interfaces/client.intarface';
 import { ClientService } from 'src/app/services/client.service';
+import { RemoveClientPopUpComponent } from '../remove-client-pop-up/remove-client-pop-up.component';
 
 @Component({
   selector: 'app-table',
@@ -22,7 +24,7 @@ export class TableComponent implements OnInit {
   $clientData!: Observable<Client> ;
   formGroup = new FormGroup({});
 
-  constructor(private clientService : ClientService, protected modalService: TotsFormModalService,) {
+  constructor(private clientService : ClientService, protected modalService: TotsFormModalService, public dialog: MatDialog) {
   }
 
   ngOnInit(): void {
@@ -109,21 +111,29 @@ export class TableComponent implements OnInit {
   });
   }
 
-  removeItem(item: any) {
-    this.clientService.removeClient(item.id).subscribe({
-      next: () => {
-        this.items = this.items.filter(i=> i.id != item.id)
-        let data = new TotsListResponse();
-        data.data = this.items;
-        this.config.obs = of(data);
-        this.tableComp?.loadItems();
-      },
-      error: (err: any) => {
-          console.error('API Error:', err);
-      },
-      complete: () => { }
-  });
-  }
+  removeItem(item : any): void { 
+    let dialogRef = this.dialog.open(RemoveClientPopUpComponent, { 
+      width: '500px',
+      panelClass: 'remove-modal'
+    }); 
+  
+    dialogRef.afterClosed().subscribe(result => { 
+      if(result){
+        this.clientService.removeClient(item.id).subscribe({
+          next: () => {
+            this.items = this.items.filter(i=> i.id != item.id)
+            let data = new TotsListResponse();
+            data.data = this.items;
+            this.config.obs = of(data);
+            this.tableComp?.loadItems();
+          },
+          error: (err: any) => {
+              console.error('API Error:', err);
+          }
+      });
+      }
+    }); 
+  } 
 
   openFormModal(editItem?: any) {
     let config = new TotsModalConfig();
@@ -173,8 +183,7 @@ export class TableComponent implements OnInit {
        },
        error: (err: any) => {
            console.error('API Error:', err);
-       },
-       complete: () => { }
+       }
    });
   }
 

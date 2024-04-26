@@ -9,8 +9,8 @@ Aprox 7 - 8 horas
 
 ¿ Que hice ?
 
- 1) Clone los tres respositorios otorgados : proyecto / forms / table, y estuve un buen rato tratando de montarlos y correrlos. 
-Los clone, use npm install, downgradie mi CLI y tambien arregle varios errores de importaciones en la branch main clonada, para poder correrlos local .
+ 1) Clone los respositorios otorgados :  forms / table, y estuve un buen rato tratando de montarlos y correrlos. Y monte el proyecto general.
+Use npm install, downgradie mi CLI con nvm y tambien arregle varios errores de importaciones en la branch main clonada, para poder correrlos local .
 Ej 
 ```javascript
 import { TotsFormModule } from '@tots/form';
@@ -33,8 +33,8 @@ Todo esto me demoro algunas 2 horas aprox, ya que sin la documentacion tuve que 
 - Algunas interfaces de Cliente y Registro (Despues me di cuenta que estaban las Entities)
 
 3) Empece a imaginar como montar mis componentes en base a lo solicitado.
-- En principio pense en utilizar TotsFormModalService para el modal de creacion y edicion de clientes y de utilizar el formulario custom para el registro y login, como para utilizar las dos opciones.
-- Lei el example del componente de Table y empece a montarlo en mi componente principal.
+- Pense en utilizar TotsFormModalService para el modal de creacion y edicion de clientes y de utilizar el formulario custom para el registro y login, como para utilizar las dos opciones.
+- Lei el example del componente de Table y empece a montarlo en mi componente principal junto con las logicas que iba a utilizar.
 
 4) Cree, conecte y testie los endpoints otorgados y empece con las logicas basicas para utilizarlos. Empece por la tabla, segui con el form y una vez terminado lo importante termine el login y el register. 
 
@@ -49,10 +49,14 @@ Los detalles mas tecnicos de como lidie con las logicas de los componentes los c
 - No logre hacer funcionar el paginado de la tabla, ni en mi proyecto ni en el Example.
 - Meterme demasiado en la validacion del formulario de registro, esta bastante debil la creacion de usuarios de mi aplicacion, entiendo que de querer validar emails y demas deberia trabajar en la biblioteca de forms x).
 
-## Principales desafios :
-1 ) Creo que el principal desafio de la tarea fue dominar las bibliotecas Tots, entender como funcionaban la Table, el Form y el ModalForm y que recursos de configuracion iba a necesitar utilizar en mi propio proyecto.
+7) Limpie un poco el codigo, repase todos los puntos del Pdf, fixie algunos errores del modal de Registro al postear y agrege el modal de eliminar.
 
-2 ) Estuve un buen rato intentando arreglar y downgradear, problemas causados por utilizar un CLI version mas alta al principio del proyecto, y tambien instale una version erronea de angular material que me trajo un par de dolores de cabeza.
+8) Encare el deploy y termine el readme 
+
+## Principales desafios :
+1) Creo que el principal desafio de la tarea fue dominar las bibliotecas Tots, entender como funcionaban la Table, el Form y el ModalForm y que recursos de configuracion iba a necesitar utilizar en mi propio proyecto.
+
+2) Estuve un buen rato intentando arreglar y downgradear, problemas causados por utilizar un CLI version mas alta al principio del proyecto, y tambien instale una version erronea de angular material que me trajo un par de dolores de cabeza.
 
 
 ## To Run My Project :
@@ -61,6 +65,8 @@ Los detalles mas tecnicos de como lidie con las logicas de los componentes los c
 - npm install
 - npm run start
 
+## Deploy en Vercel :
 
+- https://tots-angular-test-5eodi6i48-herwing0s-projects.vercel.app/
 
-Gracias por todo, fue un ejercicio muy divertido !
+Gracias por todo, fue un ejercicio muy divertido, mientanme y diganme que leyeron todo!

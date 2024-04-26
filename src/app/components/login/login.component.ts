@@ -35,7 +35,6 @@ export class LoginComponent implements OnInit {
   
        this.authService.doLogin(obj).subscribe({
          next: (response) => {
-          debugger;
           if(response.success) {
             this.router.navigate(['/table-component']);
           } else {
@@ -57,7 +56,6 @@ export class LoginComponent implements OnInit {
     
       dialogRef.afterClosed().subscribe(result => { 
         result
-        debugger;
       }); 
     } 
 }

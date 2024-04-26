@@ -35,7 +35,6 @@ public removeClient(id: any): Observable<any>{
 }
 
 public getClientById(id: any): Observable<any>{
-  debugger;
   let postUrl = this.base_url + `/client/fetch/${id}`
   return this.http.get(postUrl)
 }

@@ -3,16 +3,17 @@
   margin: auto;
   padding: 4em;
   background-color: white;
+  border-radius: 25px;
 
 }
 
 .button-send {
+  border-radius: 4px;
     background-color: #9280B4;
     padding: 6px;
     border: none;
     cursor: pointer;
     width: 25%;
     color: var(--surface-light-surface-0, var(--Color, #FFF));
-    border-radius: 25px;
 }
 

@@ -7,10 +7,17 @@ body {
     overflow-x: hidden;
     font-family: var(--font-family);
     color: rgba(68, 66, 70, 1);
+    background-color: #eeeeee;
 
 }
 
 * {
     box-sizing: border-box;
     outline: none;
+}
+
+.remove-modal .mat-mdc-dialog-container .mdc-dialog__surface {
+    overflow: hidden;
+    border-radius: 25px;
+    padding: 5px;
 }

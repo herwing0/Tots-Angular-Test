@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, type OnInit } from '@angular/core';
 import { Validators } from '@angular/forms';
+import { MatDialogRef } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { RowFieldComponent, StringFieldComponent, SubmitButtonFieldComponent, TotsActionForm, TotsFieldForm } from '@tots/form';
 import { AuthService } from 'src/app/services/auth.service';
@@ -16,7 +17,7 @@ export class RegisterFormComponent implements OnInit {
   item = {};
   errorForm!: string
 
-  constructor( private router: Router, private authService: AuthService) {
+  constructor( private router: Router, private authService: AuthService, public dialogRef: MatDialogRef<RegisterFormComponent>) {
 
 }
   ngOnInit(): void {
@@ -26,7 +27,6 @@ export class RegisterFormComponent implements OnInit {
 
   onActionForm(action: TotsActionForm) {
     console.log(action);
-debugger;
     if(action.key == 'submit'){
       this.registerUser(action.item)
     }
@@ -48,9 +48,7 @@ debugger;
      this.authService.registerUser(formData).subscribe({
        next: (response) => {
         if(response.success) {
-
-          debugger;
-          
+          this.dialogRef.close();
         } else {
           this.errorForm = response.error.message
         }
