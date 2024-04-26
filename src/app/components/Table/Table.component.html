@@ -1,0 +1,6 @@
+<div class="container" *ngIf="items.length > 0" >
+    <button type="submit" class="button-send" (click)="openFormModal()">Agregar item</button>
+    <tots-table #tableComp [config]="config" (onAction)="onTableAction($event)" [pageIndex]="1" [pageSize]="5" [hasPagination]="hasPagination"></tots-table>
+</div>
+
+<!-- <button (click)="openFormModal()">Prueba de Modal</button> -->

@@ -1,27 +1,57 @@
-# TotsTestAngular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.5.
+# Tots Test Project
 
-## Development server
+Pequeña integracion de bibliotecas Tots y servicios con el objetivo de crear una tabla editable con formularios custom.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## Detalle de horas y tareas : 
+Aprox 7 - 8 horas
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+¿ Que hice ?
 
-## Build
+ 1) Clone los tres respositorios otorgados : proyecto / forms / table, y estuve un buen rato tratando de montarlos y correrlos. 
+Los clone, use npm install, downgradie mi CLI y tambien arregle varios errores de importaciones en la branch main clonada, para poder correrlos local .
+Ej 
+```javascript
+import { TotsFormModule } from '@tots/form';
+To
+import { TotsFormModule } from 'projects/tots/form/src/lib/form.module';
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+```
+A si mismo, en mi proyecto test principal, instale las bibliotecas form y tables, y tuve que instalar algunas dependencias para montar las visuales y demas funcionamientos correctamente : 
 
-## Running unit tests
+```javascript
+"parse5": "^7.1.2"
+"@angular/material": "~16.2.11"
+"@angular/cdk": "^16.2.11"
+```
+Todo esto me demoro algunas 2 horas aprox, ya que sin la documentacion tuve que revisar bien todos los imports para entender que versiones instalar correctamente en mi repo y de paso me puse a probar como funcionaban las librerias por pura curiosidad.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+2) Empece la maquetacion de mi proyecto, en base a las tareas solicitadas.
+- Cree componentes de Login, uno principal para montar la tabla y uno de registro.
+- Cree servicios de auth y de cliente para montar los endpoints otorgados.
+- Algunas interfaces de Cliente y Registro (Despues me di cuenta que estaban las Entities)
 
-## Running end-to-end tests
+3) Empece a imaginar como montar mis componentes en base a lo solicitado.
+- En principio pense en utilizar TotsFormModalService para el modal de creacion y edicion de clientes y de utilizar el formulario custom para el registro y login, como para utilizar las dos opciones.
+- Lei el example del componente de Table y empece a montarlo en mi componente principal.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+4) Cree, conecte y testie los endpoints otorgados y empece con las logicas basicas para utilizarlos. Empece por la tabla, segui con el form y una vez terminado lo importante termine el login y el register. 
 
-## Further help
+6) Me dedique a agregar algunos detalles visuales, aunque este no fue el fuerte de este ejercicio .
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Los detalles mas tecnicos de como lidie con las logicas de los componentes los conversamos luego asi no hago tan largo el readme.
+
+¿ Que no pude hacer ?
+- Unit testing de los servicios de auth pero @tots/core no me lo permitio .
+- Pipes asyncronos para manejar la data de la tabla, pero me trajo algunos problemas con la biblio y preferi no embrollarme, si conversamos mas adelante me gustaria charlar como lograr eso, de ser posible.
+- Se me ocurrio utilizar algun state controler para la app, como Redux o Subjects, pero simplemente fui por observables porque me parecio mas simple para este caso.
+- No logre hacer funcionar el paginado de la tabla, ni en mi proyecto ni en el Example.
+- Meterme demasiado en la validacion del formulario de registro, esta bastante debil la creacion de usuarios de mi aplicacion, entiendo que de querer validar emails y demas deberia trabajar en la biblioteca de forms x).
+
+## Principales desafios :
+1 ) Creo que el principal desafio de la tarea fue dominar las bibliotecas Tots, entender como funcionaban la Table, el Form y el ModalForm y que recursos de configuracion iba a necesitar utilizar en mi propio proyecto.
+
+2 ) Estuve un buen rato intentando arreglar y downgradear, problemas causados por utilizar un CLI version mas alta al principio del proyecto, y tambien instale una version erronea de angular material que me trajo un par de dolores de cabeza.
+
+

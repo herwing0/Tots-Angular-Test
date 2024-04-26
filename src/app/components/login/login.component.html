@@ -1,0 +1,24 @@
+<div class="form-login">
+    <div class="container">
+      <h1 class="title text-5xl">Welcome to Tots Test!</h1>
+      <h3 class="subtitle fs-large">Enter your login credentials to get started</h3>
+      <h3 class="subtitle fs-large">Or do a quick sign up if you need!</h3>
+    </div>
+    <form [formGroup]="loginForm">
+      <div class="container">
+        <div class="input-notificacion-type">
+          <input formControlName="email" type="text" placeholder="Email">
+        </div>
+        <div class="input-notificacion-type">
+          <input formControlName="password" type="password" placeholder="Password">
+        </div>  
+        <div *ngIf="this.errorForm" class="alert">
+            {{errorForm}}
+          </div>
+      </div>
+      <div class="container">
+        <button type="submit" class="button-send" (click)="doLogin(this.loginForm.value)">LOGIN</button>
+        <button class="button-forgot" (click)="openDialog()" >Register</button>
+      </div>
+    </form>
+  </div>

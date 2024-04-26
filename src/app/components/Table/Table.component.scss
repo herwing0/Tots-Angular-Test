@@ -1,0 +1,18 @@
+.container{
+  width: 1200px;
+  margin: auto;
+  padding: 4em;
+  background-color: white;
+
+}
+
+.button-send {
+    background-color: #9280B4;
+    padding: 6px;
+    border: none;
+    cursor: pointer;
+    width: 25%;
+    color: var(--surface-light-surface-0, var(--Color, #FFF));
+    border-radius: 25px;
+}
+

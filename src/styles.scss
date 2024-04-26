@@ -1,1 +1,16 @@
-/* You can add global styles to this file, and also import other style files */
+html {
+    --side-margin: 40px;
+}
+
+body {
+    height: 100%;
+    overflow-x: hidden;
+    font-family: var(--font-family);
+    color: rgba(68, 66, 70, 1);
+
+}
+
+* {
+    box-sizing: border-box;
+    outline: none;
+}

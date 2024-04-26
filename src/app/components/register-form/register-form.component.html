@@ -1,0 +1,7 @@
+<div class="container">
+    <h1 class="title text-5xl">Enter your new email and password :</h1>
+    <tots-form #form [fields]="fields" [item]="item" (onAction)="onActionForm($event)"></tots-form>
+    <div *ngIf="this.errorForm" class="alert">
+        {{errorForm}}
+      </div>
+</div>
