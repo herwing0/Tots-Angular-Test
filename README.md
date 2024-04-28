@@ -40,18 +40,26 @@ Todo esto me demoro algunas 2 horas aprox, ya que sin la documentacion tuve que 
 
 6) Me dedique a agregar algunos detalles visuales, aunque este no fue el fuerte de este ejercicio .
 
-Los detalles mas tecnicos de como lidie con las logicas de los componentes los conversamos luego asi no hago tan largo el readme.
-
-¿ Que no pude hacer ?
-- Unit testing de los servicios de auth pero @tots/core no me lo permitio .
-- Pipes asyncronos para manejar la data de la tabla, pero me trajo algunos problemas con la biblio y preferi no embrollarme, si conversamos mas adelante me gustaria charlar como lograr eso, de ser posible.
-- Se me ocurrio utilizar algun state controler para la app, como Redux o Subjects, pero simplemente fui por observables porque me parecio mas simple para este caso.
-- No logre hacer funcionar el paginado de la tabla, ni en mi proyecto ni en el Example.
-- Meterme demasiado en la validacion del formulario de registro, esta bastante debil la creacion de usuarios de mi aplicacion, entiendo que de querer validar emails y demas deberia trabajar en la biblioteca de forms x).
-
 7) Limpie un poco el codigo, repase todos los puntos del Pdf, fixie algunos errores del modal de Registro al postear y agrege el modal de eliminar.
 
 8) Encare el deploy y termine el readme 
+
+9) Update 4/28
+
+Luego de entregar el proyecto el dia viernes 4/27, actualizo con algunas mejoras :
+
+- Para utilizar un ejemplo de pipe async, implemente en la response del login, un pipe async para renderizar el errorMessage.
+- Agrege validadores para espacios en blanco en los forms de creacion de clientes.
+
+
+Los detalles mas tecnicos de como lidie con las logicas de los componentes los conversamos luego asi no hago tan largo el readme.
+
+¿ Que no pude hacer ?
+- Unit testing de los servicios de auth, @tots/core no me lo permitio .
+- Pipes asyncronos para manejar la data de la tabla, me trajo algunos problemas con la biblio y preferi no embrollarme, si conversamos mas adelante me gustaria charlar como lograr eso, de ser posible.
+- Se me ocurrio utilizar algun state controler para la app, como Redux o Subjects, pero simplemente fui por observables porque me parecio mas simple para este caso.
+- No logre hacer funcionar el paginado de la tabla, ni en mi proyecto ni en el Example.
+- Meterme demasiado en la validacion del formulario de registro, esta bastante debil la creacion de usuarios de mi aplicacion, entiendo que de querer validar emails y demas deberia trabajar en la biblioteca de forms x).
 
 ## Principales desafios :
 1) Creo que el principal desafio de la tarea fue dominar las bibliotecas Tots, entender como funcionaban la Table, el Form y el ModalForm y que recursos de configuracion iba a necesitar utilizar en mi propio proyecto.

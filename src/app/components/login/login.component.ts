@@ -4,6 +4,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 import { RegisterFormComponent } from '../register-form/register-form.component';
+import { Observable, catchError, map, of } from 'rxjs';
 
 @Component({
     selector: 'app-login',
@@ -14,7 +15,9 @@ import { RegisterFormComponent } from '../register-form/register-form.component'
 export class LoginComponent implements OnInit {
 
     loginForm: FormGroup;
-    errorForm!: string
+    errorLogin!: string ;
+    succesLogin!: string;
+    $loginData!: Observable<any> ;
 
     constructor( private router: Router, private formBuilder: FormBuilder, private authService: AuthService, public dialog: MatDialog) {
 
@@ -28,25 +31,21 @@ export class LoginComponent implements OnInit {
     }
 
     doLogin(dataForm: any){
+
       const obj = {
         email: dataForm.email,
         password: dataForm.password
       }
-  
-       this.authService.doLogin(obj).subscribe({
-         next: (response) => {
-          if(response.success) {
-            this.router.navigate(['/table-component']);
-          } else {
-            this.errorForm = response.error.message
-          }
-          },
-         error: (err: any) => {
-             console.error('API Error:', err);
-         }
-     });
 
-    }
+      this.$loginData = this.authService.doLogin(obj).pipe(map(data => {
+          if(data.success){
+            this.succesLogin = 'Welcome ' + data.response.firstname + ' you are being redirected!'
+          setTimeout(() => { this.router.navigate(['/table-component']); }, 2500);
+          } else {
+            this.errorLogin = data.error.message
+          }
+      }))
+  }
 
     openDialog(): void { 
       let dialogRef = this.dialog.open(RegisterFormComponent, { 

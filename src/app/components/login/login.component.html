@@ -12,13 +12,24 @@
         <div class="input-notificacion-type">
           <input formControlName="password" type="password" placeholder="Password">
         </div>  
-        <div *ngIf="this.errorForm" class="alert">
-            {{errorForm}}
-          </div>
-      </div>
-      <div class="container">
-        <button type="submit" class="button-send" (click)="doLogin(this.loginForm.value)">LOGIN</button>
-        <button class="button-forgot" (click)="openDialog()" >Register</button>
       </div>
     </form>
+
+      <ng-container *ngIf="{user: $loginData | async} as data">
+        <ng-container class="success" *ngIf="succesLogin else loading">
+          <div class="success">
+            {{this.succesLogin}}
+          </div>
+        </ng-container>
+        <ng-template #loading>
+          <div  class="alert">
+            {{this.errorLogin}}
+          </div>
+        </ng-template>
+      </ng-container>
+
+    <div class="container">
+      <button type="submit" class="button-send" (click)="doLogin(this.loginForm.value)">LOGIN</button>
+      <button class="button-forgot" (click)="openDialog()" >Register</button>
+    </div>
   </div>

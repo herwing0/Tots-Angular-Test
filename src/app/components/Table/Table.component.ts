@@ -150,9 +150,9 @@ export class TableComponent implements OnInit {
     config.item = editItem ? editItem : {}
 
     config.fields = [
-      { key: 'firstname', component: StringFieldComponent, label: 'First Name', validators: [Validators.required]},
-      { key: 'lastname', component: StringFieldComponent, label: 'Last Name', validators: [Validators.required]},
-      { key: 'email', component: StringFieldComponent, label: 'Email', validators: [Validators.required]},
+      { key: 'firstname', component: StringFieldComponent, label: 'First Name', validators: [Validators.required, Validators.pattern(/^(\s+\S+\s*)*(?!\s).*$/)]},
+      { key: 'lastname', component: StringFieldComponent, label: 'Last Name', validators: [Validators.required, Validators.pattern(/^(\s+\S+\s*)*(?!\s).*$/)]},
+      { key: 'email', component: StringFieldComponent, label: 'Email', validators: [Validators.required, Validators.pattern(/^(\s+\S+\s*)*(?!\s).*$/)]},
       { key: 'submit', component: SubmitButtonFieldComponent, label: 'Enviar' }
     ];
 
