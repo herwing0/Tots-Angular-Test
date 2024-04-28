@@ -4,7 +4,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 import { RegisterFormComponent } from '../register-form/register-form.component';
-import { Observable, catchError, map, of } from 'rxjs';
+import { Observable, map } from 'rxjs';
 
 @Component({
     selector: 'app-login',
@@ -15,29 +15,25 @@ import { Observable, catchError, map, of } from 'rxjs';
 export class LoginComponent implements OnInit {
 
     loginForm: FormGroup;
-    errorLogin!: string ;
+    errorLogin!: string
     succesLogin!: string;
-    $loginData!: Observable<any> ;
+    mockParaTesting! : string;
+    $loginData!: Observable<any>;
 
     constructor( private router: Router, private formBuilder: FormBuilder, private authService: AuthService, public dialog: MatDialog) {
 
         this.loginForm = this.formBuilder.group({
-            email: ['', Validators.required],
-            password: ['', Validators.required],
+            email: ['', [Validators.required, Validators.pattern(/^(\s+\S+\s*)*(?!\s).*$/)]],
+            password: ['', [Validators.required, Validators.pattern(/^(\s+\S+\s*)*(?!\s).*$/)]],
         });
 }
       
     ngOnInit() {
     }
 
-    doLogin(dataForm: any){
-
-      const obj = {
-        email: dataForm.email,
-        password: dataForm.password
-      }
-
-      this.$loginData = this.authService.doLogin(obj).pipe(map(data => {
+    doLogin(){
+      this.mockParaTesting = "mock click for unit test"
+          this.$loginData = this.authService.doLogin(this.loginForm.value).pipe(map(data => {
           if(data.success){
             this.succesLogin = 'Welcome ' + data.response.firstname + ' you are being redirected!'
           setTimeout(() => { this.router.navigate(['/table-component']); }, 2500);
@@ -49,10 +45,8 @@ export class LoginComponent implements OnInit {
 
     openDialog(): void { 
       let dialogRef = this.dialog.open(RegisterFormComponent, { 
-        width: '700px', 
-        data: { name: 'this.name' } 
+        width: '700px'
       }); 
-    
       dialogRef.afterClosed().subscribe(result => { 
         result
       }); 

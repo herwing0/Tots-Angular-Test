@@ -36,7 +36,7 @@ export class RegisterFormComponent implements OnInit {
   configForm() {
     this.fields = [
       { key: '', component: RowFieldComponent, extra: { fields: [
-        { key: 'email', component: StringFieldComponent, label: 'Email', validators: [Validators.required, Validators.pattern(/^(\s+\S+\s*)*(?!\s).*$/) ]},
+        { key: 'email', component: StringFieldComponent, label: 'Email', validators: [Validators.required, Validators.pattern(/^(\s+\S+\s*)*(?!\s).*$/)]},
         { key: 'password', component: StringFieldComponent, label: 'Password', validators: [Validators.required, Validators.pattern(/^(\s+\S+\s*)*(?!\s).*$/)]},
       ] } },
       { key: 'submit', component: SubmitButtonFieldComponent, label: 'Enviar' },
