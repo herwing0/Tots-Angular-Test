@@ -55,7 +55,7 @@ Luego de entregar el proyecto el dia viernes 4/27, actualizo con algunas mejoras
 Los detalles mas tecnicos de como lidie con las logicas de los componentes los conversamos luego asi no hago tan largo el readme.
 
 ¿ Que no pude hacer ?
-- Unit testing de los servicios de auth, @tots/core no me lo permitio .
+- Unit testing de los servicios de auth, @tots/core no me lo permitio . (No habia visto los providers, si bien no es correcto hacer unit testing con providers externos, entiendo que los que estan en este proyecto son mockeados y arme un unit test sencillo con los mismos)
 - Pipes asyncronos para manejar la data de la tabla, me trajo algunos problemas con la biblio y preferi no embrollarme, si conversamos mas adelante me gustaria charlar como lograr eso, de ser posible.
 - Se me ocurrio utilizar algun state controler para la app, como Redux o Subjects, pero simplemente fui por observables porque me parecio mas simple para este caso.
 - No logre hacer funcionar el paginado de la tabla, ni en mi proyecto ni en el Example.
