@@ -75,6 +75,6 @@ Los detalles mas tecnicos de como lidie con las logicas de los componentes los c
 
 ## Deploy en Vercel :
 
-- https://tots-angular-test-add8dhvab-herwing0s-projects.vercel.app/
+- https://tots-test-george-prod.vercel.app/
 
 Gracias por todo, fue un ejercicio muy divertido, mientanme y diganme que leyeron todo!
