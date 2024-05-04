@@ -10,7 +10,6 @@ const routes: Routes = [
   { path: 'table-component', component: TableComponent }
 
 ];
-
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]

@@ -29,7 +29,7 @@
 
   .button-send {
     border-radius: 4px;
-    background-color: #9280B4;
+    background-color: #ff4081;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
@@ -46,7 +46,7 @@
 
   .button-forgot {
     border-radius: 4px;
-    color: #9280B4;
+    color: #ff4081 ;
     border-radius: 4px;
     background: var(--primary-light-primary-50, #F5F6FB);
     padding: 14px 20px;
@@ -74,7 +74,7 @@
   }
 
   .title {
-    color:  #9280B4;
+    color:  #ff4081;
     font-size: 28px;
     font-style: normal;
     font-weight: 600;
@@ -87,24 +87,6 @@
     font-style: normal;
     font-weight: 400;
     line-height: 21px;
-  }
-
-  span.button {
-    padding: 16px;
-    border-radius: 4px;
-    background: #F5F6FB;
-    background: var(--primary-light-primary-50, #F5F6FB);
-    color: #9280B4;
-    text-align: center;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 21px;
-    width: 50%;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: space-evenly;
   }
 
   .input-notificacion-type {

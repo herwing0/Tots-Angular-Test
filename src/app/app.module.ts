@@ -12,11 +12,12 @@ import { TOTS_TABLE_DEFAULT_CONFIG, TotsTableModule } from '@tots/table';
 import { TableComponent } from './components/Table/Table.component';
 import { TotsDateColumnModule } from '@tots/date-column';
 import { TotsEditableColumnsModule } from '@tots/editable-columns';
-import { totsTableDefaultConfig } from './entities/tots-table-default-config';
 import { TotsFormModule } from '@tots/form';
 import { LoginComponent } from './components/login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RegisterFormComponent } from './components/register-form/register-form.component';
+import { totsTableDefaultConfig } from './entities/tots-table-default-config';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { RegisterFormComponent } from './components/register-form/register-form.
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    MatButtonModule,
     /** Tots Libraries */
     TotsCoreModule,
     TotsAuthModule,

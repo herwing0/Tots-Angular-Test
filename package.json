@@ -27,7 +27,6 @@
     "@tots/editable-columns": "^16.0.5",
     "@tots/form": "^16.0.22",
     "@tots/table": "^16.0.15",
-    "parse5": "^7.1.2",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.13.0"

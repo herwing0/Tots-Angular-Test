@@ -1,4 +1,4 @@
 <div class="container" *ngIf="items.length > 0" >
-    <button type="submit" class="button-send" (click)="openFormModal()">Agregar Cliente</button>
+    <button mat-flat-button type="submit" class="button-send" (click)="openFormModal()">Add Client</button>
     <tots-table #tableComp [config]="config" (onAction)="onTableAction($event)" [pageIndex]="1" [pageSize]="5" [hasPagination]="hasPagination"></tots-table>
 </div>
